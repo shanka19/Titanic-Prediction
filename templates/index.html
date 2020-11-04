@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Survival during the Titanic Disaster</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Pclass" placeholder="Passenger Class" required="required" />
+        <input type="text" name="age" placeholder="Age" required="required" />
+		<input type="text" name="Members" placeholder="Total Members" required="required" />
+        <input type="text" name="fare" placeholder="Fare" required="required" />
+        <input type="text" name="female" placeholder="Female" required="required" />
+        <input type="text" name="male" placeholder="Male" required="required" />
+        <input type="text" name="c" placeholder="Embarkment Point C" required="required" />
+        <input type="text" name="q" placeholder="Embarkment Point Q" required="required" />
+        <input type="text" name="s" placeholder="Embarkment Point S" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
